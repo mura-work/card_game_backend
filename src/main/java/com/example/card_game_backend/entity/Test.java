@@ -20,15 +20,17 @@ public class Test {
 	private Long id;
 
 	@Column
-	private Number userId;
+	private Long userId;
 
 	@Column
 	private LocalDate playingDateTime;
 
 	@ElementCollection
+	@Column(name = "player_hands")
 	private Map<String, String> playerHands = new HashMap<>();
 
 	@ElementCollection
+	@Column(name ="dealer_hands")
 	private Map<String, String> dealerHands = new HashMap<>();
 
 	@Column
@@ -42,11 +44,11 @@ public class Test {
 		this.id = id;
 	}
 
-	public Number getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Number userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 

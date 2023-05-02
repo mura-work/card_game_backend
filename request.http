@@ -11,6 +11,6 @@ content-type: application/json
 		"suit": "Hearts",
 		"rank": "1"
 	},
-	"playingDataTime": "2023-04-01",
+	"playingDateTime": "2023-04-01",
 	"userId": 1000
 }

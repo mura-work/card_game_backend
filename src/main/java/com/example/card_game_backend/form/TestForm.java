@@ -4,17 +4,17 @@ import java.time.LocalDate;
 import java.util.Map;
 
 public class TestForm {
-	private Number userId;
+	private Long userId;
 	private LocalDate playingDateTime;
 	private Map<String, String> playerHands;
 	private Map<String, String> dealerHands;
 	private String result;
 
-	public Number getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Number userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 	public LocalDate getPlayingDateTime() {
