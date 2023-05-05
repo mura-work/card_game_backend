@@ -261,3 +261,44 @@ VALUES ('WIN', null, null, '2023-04-01', 1000) [42102-214]
 org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "X'aced0005737200116a6176612e6c616e672e496e746567657212e2a0a4f781873802000149000576616c7565787200106a6176612e6c616e672e4e756d62657286ac951d0b94e08b0200007870000003e8' (TEST: ""USER_ID"" INTEGER NOT NULL)"
 Data conversion error converting "X'aced0005737200116a6176612e6c616e672e496e746567657212e2a0a4f781873802000149000576616c7565787200106a6176612e6c616e672e4e756d62657286ac951d0b94e08b0200007870000003e8' (TEST: ""USER_ID"" INTEGER NOT NULL)"; SQL statement:
 insert into test (id, playing_date_time, result, user_id) values (default, ?, ?, ?) [22018-214]
+2023-05-05 11:29:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "PLAYER_BLACK_JACK_HANDS" はすでに存在します
+Table "PLAYER_BLACK_JACK_HANDS" already exists; SQL statement:
+CREATE TABLE player_black_jack_hands (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    black_jack_history_id INT NOT NULL,
+    suit VARCHAR(255) NOT NULL,
+    rank VARCHAR(255) NOT NULL
+) [42101-214]
+2023-05-05 11:29:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "DEALER_BLACK_JACK_HANDS" はすでに存在します
+Table "DEALER_BLACK_JACK_HANDS" already exists; SQL statement:
+CREATE TABLE dealer_black_jack_hands (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    black_jack_history_id INT NOT NULL,
+    suit VARCHAR(255) NOT NULL,
+    rank VARCHAR(255) NOT NULL
+) [42101-214]
+2023-05-05 11:29:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "DROP TABLE IF EXISTS player_black_jack_hands\000d\000a[*]DROP TABLE IF EXISTS dealer_black_jack_hands"
+Syntax error in SQL statement "DROP TABLE IF EXISTS player_black_jack_hands\000d\000a[*]DROP TABLE IF EXISTS dealer_black_jack_hands"; SQL statement:
+DROP TABLE IF EXISTS player_black_jack_hands
+DROP TABLE IF EXISTS dealer_black_jack_hands [42000-214]
+2023-05-05 11:29:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "PLAYER_BLACK_JACK_HANDS" はすでに存在します
+Table "PLAYER_BLACK_JACK_HANDS" already exists; SQL statement:
+CREATE TABLE player_black_jack_hands (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    black_jack_history_id INT NOT NULL,
+    suit VARCHAR(255) NOT NULL,
+    rank VARCHAR(255) NOT NULL
+) [42101-214]
+2023-05-05 11:29:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "DEALER_BLACK_JACK_HANDS" はすでに存在します
+Table "DEALER_BLACK_JACK_HANDS" already exists; SQL statement:
+CREATE TABLE dealer_black_jack_hands (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    black_jack_history_id INT NOT NULL,
+    suit VARCHAR(255) NOT NULL,
+    rank VARCHAR(255) NOT NULL
+) [42101-214]
