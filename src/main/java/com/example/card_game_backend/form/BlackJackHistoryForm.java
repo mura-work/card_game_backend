@@ -3,7 +3,7 @@ package com.example.card_game_backend.form;
 import java.time.LocalDate;
 import java.util.Map;
 
-public class TestForm {
+public class BlackJackHistoryForm {
 	private Long userId;
 	private LocalDate playingDateTime;
 	private Map<String, String> playerHands;
