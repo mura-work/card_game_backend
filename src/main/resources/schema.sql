@@ -1,13 +1,38 @@
-DROP TABLE IF EXISTS test;
+DROP TABLE IF EXISTS player_black_jack_hands;
+DROP TABLE IF EXISTS dealer_black_jack_hands;
+DROP TABLE IF EXISTS black_jack_histories;
 
-CREATE TABLE test (
+CREATE TABLE black_jack_histories (
     id INT PRIMARY KEY AUTO_INCREMENT,
     result VARCHAR(255) NOT NULL,
-    player_hands JSON,
-    dealer_hands JSON,
     playing_date_time DATE NOT NULL,
-    user_id INT NOT NULL
+    user_id INT NOT NULL,
+    PRIMARY KEY (id)
 );
 
-INSERT INTO test (result, player_hands, dealer_hands, playing_date_time, user_id)
-VALUES ('WIN', null, null, '2023-04-01', 1000);
+CREATE TABLE player_black_jack_hands (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    black_jack_history_id INT NOT NULL,
+    suit VARCHAR(255) NOT NULL,
+    rank VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (black_jack_history_id) REFERENCES black_jack_histories(id)
+);
+
+CREATE TABLE dealer_black_jack_hands (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    black_jack_history_id INT NOT NULL,
+    suit VARCHAR(255) NOT NULL,
+    rank VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (black_jack_history_id) REFERENCES black_jack_histories(id)
+);
+
+INSERT INTO black_jack_histories (result, playing_date_time, user_id)
+VALUES ('WIN', '2023-04-01', 1000);
+
+INSERT INTO player_black_jack_hands (suit, rank, black_jack_history_id)
+VALUES ('CLUB', '3', 1);
+
+INSERT INTO dealer_black_jack_hands (suit, rank, black_jack_history_id)
+VALUES ('CLUB', 'A', 1);
