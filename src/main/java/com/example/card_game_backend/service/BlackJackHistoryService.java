@@ -1,5 +1,7 @@
 package com.example.card_game_backend.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,10 @@ import com.example.card_game_backend.repository.BlackJackHistoryRepository;
 public class BlackJackHistoryService {
 	@Autowired
 	BlackJackHistoryRepository repository;
+
+	public List<BlackJackHistory> findAll() {
+		return repository.findAll();
+	}
 
 	public void saveTest(BlackJackHistoryForm testForm) {
 		BlackJackHistory test = new BlackJackHistory();

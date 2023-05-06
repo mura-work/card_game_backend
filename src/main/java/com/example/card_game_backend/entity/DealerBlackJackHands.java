@@ -5,13 +5,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name="black_jack_hands")
-public class Hand {
+@Table(name="dealer_black_jack_hands")
+public class DealerBlackJackHands {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -21,4 +23,8 @@ public class Hand {
 
 	@Column
 	private String rank;
+
+	@OneToOne
+	@JoinColumn(name = "black_jack_history_id", referencedColumnName = "id", nullable = false)
+	private BlackJackHistory blackJackHistory;
 }
