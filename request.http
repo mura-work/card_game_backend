@@ -1,19 +1,19 @@
-# POST http://localhost:8080/api/v1/post_test HTTP/1.1
-# content-type: application/json
-
-# {
-# 	"result": "WIN",
-# 	"playerHands": {
-# 		"suit": "Hearts",
-# 		"rank": "1"
-# 	},
-# 	"dealerHands": {
-# 		"suit": "Hearts",
-# 		"rank": "1"
-# 	},
-# 	"playingDateTime": "2023-04-01",
-# 	"userId": 1000
-# }
-
-GET http://localhost:8080/api/v1/black_jack_histories HTTP/1.1
+POST http://localhost:8080/api/v1/black_jack_histories HTTP/1.1
 content-type: application/json
+
+{
+	"result": "WIN",
+	"playerHands": {
+		"suit": "Hearts",
+		"rank": "1"
+	},
+	"dealerHands": {
+		"suit": "Hearts",
+		"rank": "1"
+	},
+	"playingDateTime": "2023-04-01",
+	"userId": 1000
+}
+
+# GET http://localhost:8080/api/v1/black_jack_histories HTTP/1.1
+# content-type: application/json
