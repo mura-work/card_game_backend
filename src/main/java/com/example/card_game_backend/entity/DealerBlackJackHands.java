@@ -25,6 +25,6 @@ public class DealerBlackJackHands {
 	private String rank;
 
 	@OneToOne
-	@JoinColumn(name = "black_jack_history_id", referencedColumnName = "id", nullable = false)
+	@JoinColumn(name = "black_jack_history_id", referencedColumnName = "id", nullable = true)
 	private BlackJackHistory blackJackHistory;
 }

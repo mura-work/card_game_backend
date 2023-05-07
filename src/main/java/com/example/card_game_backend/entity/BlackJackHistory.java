@@ -39,4 +39,12 @@ public class BlackJackHistory {
 	@OneToOne(mappedBy = "blackJackHistory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonIgnoreProperties("blackJackHistory")
 	private DealerBlackJackHands dealerBlackJackHands;
+
+	public void setPlayerHands(PlayerBlackJackHands playerHands) {
+		this.playerBlackJackHands = playerHands;
+	}
+
+	public void setDealerHands(DealerBlackJackHands dealerHands) {
+		this.dealerBlackJackHands = dealerHands;
+	}
 }

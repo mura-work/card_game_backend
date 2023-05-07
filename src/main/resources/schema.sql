@@ -12,7 +12,7 @@ CREATE TABLE black_jack_histories (
 
 CREATE TABLE player_black_jack_hands (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    black_jack_history_id INT NOT NULL,
+    black_jack_history_id INT,
     suit VARCHAR(255) NOT NULL,
     rank VARCHAR(255) NOT NULL,
     PRIMARY KEY (id),
@@ -21,7 +21,7 @@ CREATE TABLE player_black_jack_hands (
 
 CREATE TABLE dealer_black_jack_hands (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    black_jack_history_id INT NOT NULL,
+    black_jack_history_id INT,
     suit VARCHAR(255) NOT NULL,
     rank VARCHAR(255) NOT NULL,
     PRIMARY KEY (id),

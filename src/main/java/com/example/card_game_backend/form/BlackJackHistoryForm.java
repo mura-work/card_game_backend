@@ -1,13 +1,15 @@
 package com.example.card_game_backend.form;
 
 import java.time.LocalDate;
-import java.util.Map;
+
+import com.example.card_game_backend.entity.DealerBlackJackHands;
+import com.example.card_game_backend.entity.PlayerBlackJackHands;
 
 public class BlackJackHistoryForm {
 	private Long userId;
 	private LocalDate playingDateTime;
-	private Map<String, String> playerHands;
-	private Map<String, String> dealerHands;
+	private PlayerBlackJackHands playerHands;
+	private DealerBlackJackHands dealerHands;
 	private String result;
 
 	public Long getUserId() {
@@ -24,18 +26,18 @@ public class BlackJackHistoryForm {
 	public void setPlayingDateTime(LocalDate playingDateTime) {
 		this.playingDateTime = playingDateTime;
 	}
-	public Map<String, String> getPlayerHands() {
+	public PlayerBlackJackHands getPlayerHands() {
 		return playerHands;
 	}
 
-	public void setPlayerHands(Map<String, String> playerHands) {
+	public void setPlayerHands(PlayerBlackJackHands playerHands) {
 		this.playerHands = playerHands;
 	}
-	public Map<String, String> getDealerHands() {
+	public DealerBlackJackHands getDealerHands() {
 		return dealerHands;
 	}
 
-	public void setDealerHands(Map<String, String> dealerHands) {
+	public void setDealerHands(DealerBlackJackHands dealerHands) {
 		this.dealerHands = dealerHands;
 	}
 
