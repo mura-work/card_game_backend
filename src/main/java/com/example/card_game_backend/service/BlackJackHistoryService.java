@@ -31,7 +31,7 @@ public class BlackJackHistoryService {
 	}
 
 	@Transactional
-	public void saveTest(BlackJackHistoryForm testForm) {
+	public BlackJackHistory saveTest(BlackJackHistoryForm testForm) {
 		BlackJackHistory blackJackHistory = new BlackJackHistory();
 		blackJackHistory.setUserId(testForm.getUserId());
 		blackJackHistory.setPlayingDateTime(testForm.getPlayingDateTime());
@@ -40,12 +40,20 @@ public class BlackJackHistoryService {
 		blackJackHistory.setDealerHands(testForm.getDealerHands());
 		BlackJackHistory blackJackHistoryEntity = repository.save(blackJackHistory);
 
-		PlayerBlackJackHands playerHands = testForm.getPlayerHands();
-		playerHands.setBlackJackHistory(blackJackHistoryEntity);
-		playerHandsRepository.save(playerHands);
+		List<PlayerBlackJackHands> playerHands = testForm.getPlayerHands();
+		for (PlayerBlackJackHands hands : playerHands) {
+			hands.setBlackJackHistory(blackJackHistoryEntity);
+			playerHandsRepository.save(hands);
+		}
 
-		DealerBlackJackHands dealerHands = testForm.getDealerHands();
-		dealerHands.setBlackJackHistory(blackJackHistoryEntity);
-		dealerHandsRepository.save(dealerHands);
+		List<DealerBlackJackHands> dealerHands = testForm.getDealerHands();
+		for (DealerBlackJackHands hands : dealerHands) {
+			hands.setBlackJackHistory(blackJackHistoryEntity);
+			dealerHandsRepository.save(hands);
+		}
+
+		BlackJackHistory history = repository.findById(blackJackHistoryEntity.getId());
+
+		return history;
 	}
 }

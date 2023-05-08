@@ -3,14 +3,34 @@ content-type: application/json
 
 {
 	"result": "WIN",
-	"playerHands": {
-		"suit": "Hearts",
-		"rank": "1"
-	},
-	"dealerHands": {
-		"suit": "Hearts",
-		"rank": "1"
-	},
+	"playerHands": [
+		{
+			"suit": "Hearts",
+			"rank": "1"
+		},
+		{
+			"suit": "Hearts",
+			"rank": "2"
+		},
+		{
+			"suit": "Hearts",
+			"rank": "3"
+		}
+	],
+	"dealerHands": [
+		{
+			"suit": "Hearts",
+			"rank": "10"
+		},
+		{
+			"suit": "Hearts",
+			"rank": "9"
+		},
+		{
+			"suit": "Hearts",
+			"rank": "8"
+		}
+	],
 	"playingDateTime": "2023-04-01",
 	"userId": 1000
 }

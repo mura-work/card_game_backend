@@ -1,6 +1,7 @@
 package com.example.card_game_backend.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -10,7 +11,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import jakarta.persistence.GenerationType;
@@ -32,19 +33,19 @@ public class BlackJackHistory {
 	@Column
 	private String result;
 
-	@OneToOne(mappedBy = "blackJackHistory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "blackJackHistory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonIgnoreProperties("blackJackHistory")
-	private PlayerBlackJackHands playerBlackJackHands;
+	private List<PlayerBlackJackHands> playerBlackJackHands;
 
-	@OneToOne(mappedBy = "blackJackHistory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "blackJackHistory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonIgnoreProperties("blackJackHistory")
-	private DealerBlackJackHands dealerBlackJackHands;
+	private List<DealerBlackJackHands> dealerBlackJackHands;
 
-	public void setPlayerHands(PlayerBlackJackHands playerHands) {
+	public void setPlayerHands(List<PlayerBlackJackHands> playerHands) {
 		this.playerBlackJackHands = playerHands;
 	}
 
-	public void setDealerHands(DealerBlackJackHands dealerHands) {
+	public void setDealerHands(List<DealerBlackJackHands> dealerHands) {
 		this.dealerBlackJackHands = dealerHands;
 	}
 }
