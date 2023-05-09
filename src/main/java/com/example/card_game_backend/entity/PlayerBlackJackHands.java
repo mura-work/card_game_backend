@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -24,7 +24,7 @@ public class PlayerBlackJackHands {
 	@Column
 	private String rank;
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "black_jack_history_id", referencedColumnName = "id", nullable = true)
 	private BlackJackHistory blackJackHistory;
 }

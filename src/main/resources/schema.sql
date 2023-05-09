@@ -7,6 +7,8 @@ CREATE TABLE black_jack_histories (
     result VARCHAR(255) NOT NULL,
     playing_date_time DATE NOT NULL,
     user_id INT NOT NULL,
+    total_point INT NOT NULL,
+    point_difference INT NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -28,8 +30,8 @@ CREATE TABLE dealer_black_jack_hands (
     FOREIGN KEY (black_jack_history_id) REFERENCES black_jack_histories(id)
 );
 
-INSERT INTO black_jack_histories (result, playing_date_time, user_id)
-VALUES ('WIN', '2023-04-01', 1000);
+INSERT INTO black_jack_histories (result, playing_date_time, user_id, total_point, point_difference)
+VALUES ('WIN', '2023-04-01', 1000,  100, 10);
 
 INSERT INTO player_black_jack_hands (suit, rank, black_jack_history_id)
 VALUES ('CLUB', '3', 1);
