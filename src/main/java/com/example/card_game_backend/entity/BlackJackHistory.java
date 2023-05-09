@@ -33,6 +33,12 @@ public class BlackJackHistory {
 	@Column
 	private String result;
 
+	@Column
+	private int totalPoint;
+
+	@Column
+	private int pointDifference;
+
 	@OneToMany(mappedBy = "blackJackHistory", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonIgnoreProperties("blackJackHistory")
 	private List<PlayerBlackJackHands> playerBlackJackHands;

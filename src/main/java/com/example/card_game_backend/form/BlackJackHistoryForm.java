@@ -12,6 +12,8 @@ public class BlackJackHistoryForm {
 	private	List<PlayerBlackJackHands> playerHands;
 	private List<DealerBlackJackHands> dealerHands;
 	private String result;
+	private int totalPoint;
+	private int pointDifference;
 
 	public Long getUserId() {
 		return userId;
@@ -48,5 +50,21 @@ public class BlackJackHistoryForm {
 
 	public void setResult(String result) {
 		this.result = result;
+	}
+
+	public int getTotalPoint() {
+		return totalPoint;
+	}
+
+	public void setTotalPoint(int totalPoint) {
+		this.totalPoint = totalPoint;
+	}
+
+	public int getPointDifference() {
+		return pointDifference;
+	}
+
+	public void setPointDifference(int pointDifference) {
+		this.pointDifference = pointDifference;
 	}
 }

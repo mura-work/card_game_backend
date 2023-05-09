@@ -38,6 +38,8 @@ public class BlackJackHistoryService {
 		blackJackHistory.setResult(testForm.getResult());
 		blackJackHistory.setPlayerHands(testForm.getPlayerHands());
 		blackJackHistory.setDealerHands(testForm.getDealerHands());
+		blackJackHistory.setPointDifference(testForm.getPointDifference());
+		blackJackHistory.setTotalPoint(testForm.getTotalPoint());
 		BlackJackHistory blackJackHistoryEntity = repository.save(blackJackHistory);
 
 		List<PlayerBlackJackHands> playerHands = testForm.getPlayerHands();

@@ -32,7 +32,9 @@ content-type: application/json
 		}
 	],
 	"playingDateTime": "2023-04-01",
-	"userId": 1000
+	"userId": 1000,
+	"totalPoint": 500,
+	"pointDifference": 50
 }
 
 # GET http://localhost:8080/api/v1/black_jack_histories HTTP/1.1
