@@ -24,6 +24,9 @@ public class PlayerBlackJackHands {
 	@Column
 	private String rank;
 
+	@Column(name="image_id")
+	private int imageId;
+
 	@ManyToOne
 	@JoinColumn(name = "black_jack_history_id", referencedColumnName = "id", nullable = true)
 	private BlackJackHistory blackJackHistory;
